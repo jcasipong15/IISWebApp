@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@primary-color: #4f46e5; 
+@primary-hover: #4338ca;
+@bg-color: #f3f4f6;
+@card-bg: rgba(255, 255, 255, 0.85);
+@text-color: #1f2937;
+@border-color: rgba(255, 255, 255, 0.3);
+
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  color: @text-color;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.glass-panel {
+  background: @card-bg;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid @border-color;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  border-radius: 12px;
+}
+
+.navbar {
+  background: @card-bg;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid @border-color;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: @primary-color !important;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 2.5rem;
+
+  .login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    .login-icon {
+      font-size: 3rem;
+      color: @primary-color;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-weight: 700;
+      margin: 0;
+    }
+
+    p {
+      color: #6b7280;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+.site-card {
+  .glass-panel();
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
+  }
+
+  .card-header {
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .status-indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 8px;
+
+      &.running {
+        background-color: #10b981;
+        box-shadow: 0 0 8px #10b981;
+      }
+      &.stopped {
+        background-color: #ef4444;
+        box-shadow: 0 0 8px #ef4444;
+      }
+    }
+  }
+
+  .card-body {
+    padding: 1.5rem;
+  }
+
+  .card-title {
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+}
+
+.btn-primary {
+  background-color: @primary-color;
+  border-color: @primary-color;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s;
+
+  &:hover,
+  &:focus {
+    background-color: @primary-hover;
+    border-color: @primary-hover;
+    transform: scale(1.02);
+  }
+}
+
+.btn-glow {
+  box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.39);
+}
+
+main {
+  flex-grow: 1;
+  padding: 2rem 0;
+}
